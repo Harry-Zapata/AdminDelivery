@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AdminDelivery.Vistas.VLogin"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="https://png.pngtree.com/thumb_back/fw800/background/20210817/pngtree-twilight-sky-pixel-style-mobile-phone-wallpaper-background-image_762280.jpg"
+                   Aspect="Fill" 
+                   Opacity=".5"
+                   HorizontalOptions="FillAndExpand" 
+                   VerticalOptions="FillAndExpand"
+                   />
+            <StackLayout Margin="50"
+                         HorizontalOptions="CenterAndExpand"
+                         VerticalOptions="CenterAndExpand">
+                <Frame CornerRadius="25">
+                    <StackLayout WidthRequest="300">
+                        <Label Text="Iniciar Sesion"
+                               TextTransform="Uppercase"
+                               TextColor="#DB4017" 
+                               FontAttributes="Bold" 
+                               FontSize="20" 
+                               HorizontalOptions="Center"
+                               />
+                        <Image 
+                            Source="https://olaclick.com/wp-content/uploads/2023/09/Untitled-design-6.png"
+                               />
+                        <Entry Placeholder="Ingrese su Email"
+                               HorizontalTextAlignment="Center"
+                               Text=""
+                               Margin="0,10,0,10"
+                               />
+
+                        <Entry Placeholder="Ingrese su Contraseña"
+                               HorizontalTextAlignment="Center"
+                               Text=""
+                               Margin="0,10,0,10"
+                               />
+                        <Button Text="Ingresar"
+                                BackgroundColor="#22bb33"
+                                CornerRadius="10"                  
+                                />
+
+                        <Label HorizontalOptions="Center" Margin="0,15,0,15">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="¿No tienes cuenta? "/>
+                                    <Span Text="Registrate"
+                                          TextColor="Red">
+                                        <Span.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="Ir_A_Registro"/>
+                                        </Span.GestureRecognizers>
+                                    </Span>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
