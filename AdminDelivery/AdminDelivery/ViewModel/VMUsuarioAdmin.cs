@@ -7,6 +7,7 @@ using AdminDelivery.Datos;
 using AdminDelivery.Modelo;
 using Firebase.Auth;
 using Xamarin.Forms;
+using Newtonsoft.Json.Serialization;
 
 namespace AdminDelivery.ViewModel
 {
@@ -68,6 +69,20 @@ namespace AdminDelivery.ViewModel
             await authProvider.CreateUserWithEmailAndPasswordAsync(correo, pass);
             await DisplayAlert("Registro Exitoso", "Se registro el usuario Correctamente", "Ok");
         }
+
+        public async Task resPass(string correo)
+        {
+            var authProvider = new FirebaseAuthProvider(new FirebaseConfig(Conexion.ConexionFirebase.TokenAuthentication));
+            await authProvider.SendPasswordResetEmailAsync(correo);
+            try
+            {
+                await DisplayAlert("Enviado", "Se envio un mensaje a tu correo ", "Ok");
+            }
+            catch
+            {
+                await DisplayAlert("Error", "Error al enviar correo", "Ok");
+            }
+        }
         #endregion
 
         #region Constructor
@@ -75,11 +90,13 @@ namespace AdminDelivery.ViewModel
         {
             navigation = navigation ?? throw new ArgumentNullException(nameof(navigation));
             ComandoInsertarUsuarioAdmin = new Command(async () => await insetarUsuarioAdmin());
+            ComandoCambiarPass = new Command(async() => await resPass(correo));
         }
         #endregion
 
         #region Comando
         public Command ComandoInsertarUsuarioAdmin {  get; }
+        public Command ComandoCambiarPass {  get; }
         #endregion
 
     }

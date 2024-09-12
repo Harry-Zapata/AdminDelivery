@@ -21,5 +21,10 @@ namespace AdminDelivery.Vistas
         {
             await Navigation.PushAsync(new VUsuarioAdmin());
         }
+
+        private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new VReloadPass());
+        }
     }
 }

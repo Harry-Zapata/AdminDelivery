@@ -55,7 +55,20 @@
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
-                        
+                        <Label HorizontalOptions="Center" Margin="0,15,0,15">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="¿Olvidaste tu contraseña? "/>
+                                    <Span Text="Cambiar Contraseña"
+                                          TextColor="Red">
+                                        <Span.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                        </Span.GestureRecognizers>
+                                    </Span>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
                     </StackLayout>
                 </Frame>
             </StackLayout>
