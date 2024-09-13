@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AdminDelivery.Vistas.VInicio"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="10">
+                <Label Text="Panel de Administración"
+                       FontSize="24"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       Margin="0,0,0,20"/>
+
+                <!-- Grid para las tarjetas -->
+                <Grid ColumnSpacing="10" RowSpacing="10">
+                    <!-- Definir las filas y columnas -->
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Card 1: Total Solicitudes -->
+                    <Frame HasShadow="True"
+                           CornerRadius="15"
+                           Padding="20"
+                           Margin="0,10,0,0"
+                           BackgroundColor="#ffffff"
+                           Grid.Row="0" Grid.Column="0"
+                           HeightRequest="120">
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="https://cdn-icons-png.flaticon.com/512/3417/3417309.png"
+                                   WidthRequest="50"
+                                   HeightRequest="50"
+                                   VerticalOptions="Center"
+                                   Margin="0,0,15,0"/>
+                            <StackLayout VerticalOptions="Center">
+                                <Label Text="Total de Solicitudes"
+                                       FontSize="14"
+                                       FontAttributes="Bold"
+                                       HorizontalOptions="Start" />
+                                <Label Text="100"
+                                       FontSize="24"
+                                       TextColor="#007AFF"
+                                       HorizontalOptions="Start" />
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+
+                    <!-- Card 2: Total Clientes -->
+                    <Frame HasShadow="True"
+                           CornerRadius="15"
+                           Padding="20"
+                           Margin="0,10,0,0"
+                           BackgroundColor="#ffffff"
+                           Grid.Row="0" Grid.Column="1"
+                           HeightRequest="120">
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="https://cdn-icons-png.flaticon.com/512/2820/2820137.png"
+                                   WidthRequest="50"
+                                   HeightRequest="50"
+                                   VerticalOptions="Center"
+                                   Margin="0,0,15,0"/>
+                            <StackLayout VerticalOptions="Center">
+                                <Label Text="Total Clientes"
+                                       FontSize="14"
+                                       FontAttributes="Bold"
+                                       HorizontalOptions="Start" />
+                                <Label Text="250"
+                                       FontSize="24"
+                                       TextColor="#007AFF"
+                                       HorizontalOptions="Start" />
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+
+                    <!-- Card 3: Total Ingresos -->
+                    <Frame HasShadow="True"
+                           CornerRadius="15"
+                           Padding="20"
+                           Margin="0,10,0,0"
+                           BackgroundColor="#ffffff"
+                           Grid.Row="1" Grid.Column="0"
+                           HeightRequest="120">
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="https://www.pngall.com/wp-content/uploads/12/Earning-PNG-Photo.png"
+                                   WidthRequest="50"
+                                   HeightRequest="50"
+                                   VerticalOptions="Center"
+                                   Margin="0,0,15,0"/>
+                            <StackLayout VerticalOptions="Center">
+                                <Label Text="Total Ingresos"
+                                       FontSize="14"
+                                       FontAttributes="Bold"
+                                       HorizontalOptions="Start" />
+                                <Label Text="$3,50"
+                                       FontSize="24"
+                                       TextColor="#007AFF"
+                                       HorizontalOptions="Start" />
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+
+                    <!-- Card 4: Total Deliverys -->
+                    <Frame HasShadow="True"
+                           CornerRadius="15"
+                           Padding="20"
+                           Margin="0,10,0,0"
+                           BackgroundColor="#ffffff"
+                           Grid.Row="1" Grid.Column="1"
+                           HeightRequest="120">
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="https://png.pngtree.com/png-clipart/20220131/original/pngtree-big-isolated-motorcycle-vector-colorful-icons-flat-illustrations-of-delivery-by-png-image_7255128.png"
+                                   WidthRequest="50"
+                                   HeightRequest="50"
+                                   VerticalOptions="Center"
+                                   Margin="0,0,15,0"/>
+                            <StackLayout VerticalOptions="Center">
+                                <Label Text="Total Deliverys"
+                                       FontSize="14"
+                                       FontAttributes="Bold"
+                                       HorizontalOptions="Start" />
+                                <Label Text="75"
+                                       FontSize="24"
+                                       TextColor="#007AFF"
+                                       HorizontalOptions="Start" />
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

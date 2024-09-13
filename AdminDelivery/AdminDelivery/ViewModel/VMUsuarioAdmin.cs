@@ -50,17 +50,24 @@ namespace AdminDelivery.ViewModel
         #region Procesos
         public async Task insetarUsuarioAdmin()
         {
-            var funcion = new DUsuarioAdmin();
-            var campos = new MUsuarioAdmin();
-            campos.Correo = correo;
-            campos.Dni = dni;
-            campos.NombreCompleto = nombreCompleto;
-            campos.Foto = foto;
-            var ejecucion = await funcion.InsertarUsuarioAdmin(campos);
-
-            if (ejecucion == true)
+            try
             {
-                await usuarioPass(txtCorreo,txtPass);
+                var funcion = new DUsuarioAdmin();
+                var campos = new MUsuarioAdmin();
+                campos.Correo = correo;
+                campos.Dni = dni;
+                campos.NombreCompleto = nombreCompleto;
+                campos.Foto = foto;
+                var ejecucion = await funcion.InsertarUsuarioAdmin(campos);
+
+                if (ejecucion == true)
+                {
+                    await usuarioPass(txtCorreo, txtPass);
+                }
+            }
+            catch(Exception)
+            {
+                await Application.Current.MainPage.DisplayAlert("Error Al Registrar", "Error al Registrar al Usuario", "Ok");
             }
         }
         public async Task usuarioPass(string correo, string pass)
@@ -72,10 +79,10 @@ namespace AdminDelivery.ViewModel
 
         public async Task resPass(string correo)
         {
-            var authProvider = new FirebaseAuthProvider(new FirebaseConfig(Conexion.ConexionFirebase.TokenAuthentication));
-            await authProvider.SendPasswordResetEmailAsync(correo);
             try
             {
+                var authProvider = new FirebaseAuthProvider(new FirebaseConfig(Conexion.ConexionFirebase.TokenAuthentication));
+                await authProvider.SendPasswordResetEmailAsync(correo);
                 await DisplayAlert("Enviado", "Se envio un mensaje a tu correo ", "Ok");
             }
             catch

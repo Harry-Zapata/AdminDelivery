@@ -47,9 +47,10 @@
                         <Entry Placeholder="Ingrese su Contraseña"
                            HorizontalTextAlignment="Center"
                            Text="{Binding txtPass}"
+                           IsPassword="True"
                            Margin="0,10,0,10"
                            />
-                        <Button Text="Ingresar"
+                        <Button Text="Registrar"
                             BackgroundColor="#22bb33"
                             CornerRadius="10"
                                 Command="{Binding ComandoInsertarUsuarioAdmin}"

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdminDelivery.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,8 @@ namespace AdminDelivery.Vistas
         public VLogin()
         {
             InitializeComponent();
+            BindingContext = new VMLogin(Navigation);
+
         }
 
         private async void Ir_A_Registro(object sender, EventArgs e)

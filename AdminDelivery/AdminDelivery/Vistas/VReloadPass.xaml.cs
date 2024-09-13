@@ -20,9 +20,9 @@ namespace AdminDelivery.Vistas
 
         }
 
-        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        private async void Regresar_A_Login(object sender, EventArgs e)
         {
-
+            await Navigation.PopAsync();
         }
     }
 }
