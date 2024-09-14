@@ -45,7 +45,7 @@
                                             <!-- Nombre del Producto -->
                                             <Label Text="Nombre:" 
                FontAttributes="Bold"
-               HorizontalTextAlignment="End"
+               HorizontalTextAlignment="Start"
                VerticalTextAlignment="Center"/>
                                             <Label Text="{Binding Nombre}" 
                FontSize="18"
@@ -55,7 +55,7 @@
                                             <!-- Precio del Producto -->
                                             <Label Text="Precio:" 
                FontAttributes="Bold"
-               HorizontalTextAlignment="End"
+               HorizontalTextAlignment="Start"
                VerticalTextAlignment="Center"/>
                                             <Label Text="{Binding PrecioVenta, StringFormat='{0:C}'}" 
                FontSize="18"
@@ -65,7 +65,7 @@
                                             <!-- Stock del Producto -->
                                             <Label Text="Stock:" 
                FontAttributes="Bold"
-               HorizontalTextAlignment="End"
+               HorizontalTextAlignment="Start"
                VerticalTextAlignment="Center"/>
                                             <Label Text="{Binding Stock}" 
                FontSize="18"
@@ -74,7 +74,7 @@
                                         </StackLayout>
 
                                         <!-- Botón Regresar -->
-                                        <Button Text="Regresar" 
+                                        <Button Text="Editar" 
             Margin="10" 
             BackgroundColor="#FF696A" 
             CornerRadius="10" 
