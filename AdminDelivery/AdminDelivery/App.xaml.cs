@@ -10,7 +10,8 @@ namespace AdminDelivery
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new VLogin());
+            //MainPage = new NavigationPage(new VLogin());
+            MainPage = new NavigationPage(new InicioProductos());
         }
 
         protected override void OnStart()

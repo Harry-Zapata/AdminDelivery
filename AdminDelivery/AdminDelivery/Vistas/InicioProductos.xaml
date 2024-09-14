@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AdminDelivery.Vistas.InicioProductos"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="https://png.pngtree.com/thumb_back/fw800/background/20210817/pngtree-twilight-sky-pixel-style-mobile-phone-wallpaper-background-image_762280.jpg" 
+                   Aspect="Fill" 
+                   HorizontalOptions="FillAndExpand" 
+                   VerticalOptions="FillAndExpand"/>
+            <StackLayout>
+                <Label Text="Gestion de Productos" FontAttributes="Bold" TextColor="White" Margin="50" HorizontalOptions="Center"
+                       FontSize="25"/>
+                <Frame CornerRadius="5" Margin="300,0,10,0">
+                    <StackLayout>
+                        <ImageButton Source="https://cdn-icons-png.flaticon.com/512/760/760737.png"
+                                     BackgroundColor="Transparent"
+                                     Clicked="ImageButton_Clicked"/>
+                        <Label Text="Add" Grid.Row="1" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center" FontSize="14"/>
+                    </StackLayout>
+                </Frame>
+
+                <CollectionView ItemsSource="{Binding ListaProductos}" Margin="20">
+                    <CollectionView.ItemsLayout >
+                        <GridItemsLayout Orientation="Vertical"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Margin="20">
+                                <Frame CornerRadius="25">
+                                    <Grid Padding="10" BackgroundColor="White" RowDefinitions="Auto, Auto, Auto, Auto" ColumnDefinitions="Auto, *">
+                                        <!-- Imagen del Producto -->
+                                        <Image Source="{Binding Foto}" 
+           Grid.RowSpan="3" 
+           Aspect="AspectFit"
+           HorizontalOptions="Center"
+           VerticalOptions="Center"
+           WidthRequest="100"
+           HeightRequest="100"
+           Margin="10"/>
+
+                                        <!-- Información del Producto -->
+                                        <StackLayout Grid.Column="1" Spacing="10" Padding="10">
+                                            <!-- Nombre del Producto -->
+                                            <Label Text="Nombre:" 
+               FontAttributes="Bold"
+               HorizontalTextAlignment="End"
+               VerticalTextAlignment="Center"/>
+                                            <Label Text="{Binding Nombre}" 
+               FontSize="18"
+               HorizontalTextAlignment="Start"
+               VerticalTextAlignment="Center"/>
+
+                                            <!-- Precio del Producto -->
+                                            <Label Text="Precio:" 
+               FontAttributes="Bold"
+               HorizontalTextAlignment="End"
+               VerticalTextAlignment="Center"/>
+                                            <Label Text="{Binding PrecioVenta, StringFormat='{0:C}'}" 
+               FontSize="18"
+               HorizontalTextAlignment="Start"
+               VerticalTextAlignment="Center"/>
+
+                                            <!-- Stock del Producto -->
+                                            <Label Text="Stock:" 
+               FontAttributes="Bold"
+               HorizontalTextAlignment="End"
+               VerticalTextAlignment="Center"/>
+                                            <Label Text="{Binding Stock}" 
+               FontSize="18"
+               HorizontalTextAlignment="Start"
+               VerticalTextAlignment="Center"/>
+                                        </StackLayout>
+
+                                        <!-- Botón Regresar -->
+                                        <Button Text="Regresar" 
+            Margin="10" 
+            BackgroundColor="#FF696A" 
+            CornerRadius="10" 
+            TextColor="White" 
+            Grid.Row="3" 
+            Grid.ColumnSpan="2"/>
+                                    </Grid>
+
+
+                                </Frame>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <Button Text="Regresar" Margin="10,0,280,0" BackgroundColor="#FF696A" CornerRadius="10" TextColor="White"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AdminDelivery.Vistas.VProductos"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid>
+            <!-- Imagen de fondo con opacidad ajustada -->
+            <Image Source="https://png.pngtree.com/thumb_back/fw800/background/20210817/pngtree-twilight-sky-pixel-style-mobile-phone-wallpaper-background-image_762280.jpg"
+                   Aspect="Fill" 
+                   Opacity="0.3"
+                   HorizontalOptions="FillAndExpand" 
+                   VerticalOptions="FillAndExpand"/>
+
+            <!-- Layout principal más compacto -->
+            <StackLayout Margin="20"
+                         HorizontalOptions="CenterAndExpand"
+                         VerticalOptions="CenterAndExpand">
+                <Frame CornerRadius="15" Padding="20" BackgroundColor="White">
+                    <StackLayout WidthRequest="280" Spacing="10">
+                        <Label Text="Registrar Producto"
+                               TextTransform="Uppercase"
+                               TextColor="#DB4017" 
+                               FontAttributes="Bold" 
+                               FontSize="20" 
+                               HorizontalOptions="Center"/>
+
+                        <Image 
+                            Source="https://olaclick.com/wp-content/uploads/2023/09/Untitled-design-6.png"
+                            />
+
+                        <!-- Campos de entrada del formulario -->
+                        <Entry Placeholder="Nombre del Producto" 
+                               HorizontalTextAlignment="Center"
+                               Text="{Binding TxtNombreProducto}"
+                               />
+
+                        <Entry Placeholder="Stock" 
+                               HorizontalTextAlignment="Center" 
+                               Keyboard="Numeric"
+                               Text="{Binding TxtStock}"/>
+
+                        <Entry Placeholder="Fecha de Vencimiento (yyyy-mm-dd)" 
+                               HorizontalTextAlignment="Center"
+                               Text="{Binding TxtFechaVencimiento}"/>
+
+
+                        <Entry Placeholder="Precio de Compra" 
+                               HorizontalTextAlignment="Center" 
+                               Keyboard="Numeric"
+                               Text="{Binding TxtPrecioCompra}"/>
+
+                        <Entry Placeholder="Precio de Venta" 
+                               HorizontalTextAlignment="Center" 
+                               Keyboard="Numeric"
+                               Text="{Binding TxtPrecioVenta}"/>
+
+                        <Entry Placeholder="URL de la Foto" 
+                               HorizontalTextAlignment="Center"
+                               Margin="0,5,0,5"
+                               Text="{Binding TxtUrlFoto}"/>
+
+                        <!-- Botones más compactos -->
+                        <StackLayout Orientation="Horizontal"
+                                     HorizontalOptions="Center"
+                                     Spacing="5">
+                            <Button Text="Registrar"
+                                    BackgroundColor="#22bb33"
+                                    TextColor="White"
+                                    CornerRadius="10"
+                                    WidthRequest="130"
+                                    Margin="5"
+                                    Command="{Binding ComandoInsertarProducto}"/>
+
+                            <Button Text="Cancelar"
+                                    BackgroundColor="#ff3b30"
+                                    TextColor="White"
+                                    CornerRadius="10"
+                                    WidthRequest="130"
+                                    Margin="5"
+                                    Clicked="Button_Clicked"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
